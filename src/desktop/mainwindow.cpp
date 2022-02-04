@@ -446,7 +446,7 @@ namespace tremotesf
         const auto removeTorrentWithFilesShortcut = new QShortcut(QKeySequence(Qt::SHIFT + Qt::Key_Delete), this);
         QObject::connect(removeTorrentWithFilesShortcut, &QShortcut::activated, this, [=] { removeSelectedTorrents(true); });
 
-        QAction* setLocationAction = mTorrentMenu->addAction(qApp->translate("tremotesf", "Set &Location"));
+        QAction* setLocationAction = mTorrentMenu->addAction(QIcon::fromTheme(QLatin1String("location")), qApp->translate("tremotesf", "Set &Location"));
         QObject::connect(setLocationAction, &QAction::triggered, this, [=] {
             if (mTorrentsView->selectionModel()->hasSelection()) {
                 QModelIndexList indexes(mTorrentsProxyModel->sourceIndexes(mTorrentsView->selectionModel()->selectedRows()));
@@ -735,7 +735,7 @@ namespace tremotesf
         selectAllAction->setShortcut(QKeySequence::SelectAll);
         QObject::connect(selectAllAction, &QAction::triggered, mTorrentsView, &TorrentsView::selectAll);
 
-        QAction* invertSelectionAction = editMenu->addAction(QIcon::fromTheme(QLatin1String("edit-select-invert"), qApp->translate("tremotesf", "&Invert Selection"));
+        QAction* invertSelectionAction = editMenu->addAction(QIcon::fromTheme(QLatin1String("edit-select-invert")), qApp->translate("tremotesf", "&Invert Selection"));
         QObject::connect(invertSelectionAction, &QAction::triggered, this, [=] {
             mTorrentsView->selectionModel()->select(QItemSelection(mTorrentsProxyModel->index(0, 0),
                                                                    mTorrentsProxyModel->index(mTorrentsProxyModel->rowCount() - 1,
