@@ -193,7 +193,7 @@ namespace tremotesf
             mModel->setFilesWanted(sourceIndexes, true);
         });
 
-        QAction* notDownloadAction = contextMenu.addAction(QIcon::fromTheme(QLatin1String("cancel")),qApp->translate("tremotesf", "&Not Download"));
+        QAction* notDownloadAction = contextMenu.addAction(QIcon::fromTheme(QLatin1String("cancel")), qApp->translate("tremotesf", "&Not Download"));
         QObject::connect(notDownloadAction, &QAction::triggered, this, [=, &sourceIndexes] {
             mModel->setFilesWanted(sourceIndexes, false);
         });
