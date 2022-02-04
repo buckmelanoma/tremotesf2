@@ -735,7 +735,7 @@ namespace tremotesf
         selectAllAction->setShortcut(QKeySequence::SelectAll);
         QObject::connect(selectAllAction, &QAction::triggered, mTorrentsView, &TorrentsView::selectAll);
 
-        QAction* invertSelectionAction = editMenu->addAction(qApp->translate("tremotesf", "&Invert Selection"));
+        QAction* invertSelectionAction = editMenu->addAction(QIcon::fromTheme(QLatin1String("edit-select-invert"), qApp->translate("tremotesf", "&Invert Selection"));
         QObject::connect(invertSelectionAction, &QAction::triggered, this, [=] {
             mTorrentsView->selectionModel()->select(QItemSelection(mTorrentsProxyModel->index(0, 0),
                                                                    mTorrentsProxyModel->index(mTorrentsProxyModel->rowCount() - 1,
