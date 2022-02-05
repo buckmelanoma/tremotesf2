@@ -42,6 +42,7 @@
 #include <QStandardPaths>
 #include <QTextStream>
 #include <QVersionNumber>
+#include <QIcon>
 
 #include "org.freedesktop.FileManager1.h"
 #include "org.xfce.FileManager.h"
@@ -66,15 +67,18 @@ namespace tremotesf
             case ErroredIcon:
                 return QLatin1String(":/errored.png");
             case PausedIcon:
-                return QLatin1String(":/paused.png");
+                //return QLatin1String(":/paused.png");
+                return QLatin1String("arrow-up");
             case QueuedIcon:
                 return QLatin1String(":/queued.png");
             case SeedingIcon:
                 return QLatin1String(":/seeding.png");
             case StalledDownloadingIcon:
-                return QLatin1String(":/stalled-downloading.png");
+		return QLatin1String("arrow-down");
+		//return QLatin1String(":/stalled-downloading.png");
             case StalledSeedingIcon:
-                return QLatin1String(":/stalled-seeding.png");
+		return QLatin1String("arrow-up");
+	        //return QLatin1String(":/stalled-seeding.png");
             }
 
             return QString();

@@ -20,6 +20,9 @@
 
 #include <QCoreApplication>
 #include <QPixmap>
+#include <QIcon>
+#include <QStringBuilder>
+#include <QString>
 
 #include "libtremotesf/stdutils.h"
 #include "libtremotesf/torrent.h"
@@ -85,15 +88,20 @@ namespace tremotesf
                 using namespace desktoputils;
                 switch (torrent->status()) {
                 case TorrentData::Paused:
-                    return QPixmap(statusIconPath(PausedIcon));
+                    //return QPixmap(statusIconPath(PausedIcon));
+		    return QIcon::fromTheme(QString("media-playback-paused"));
                 case TorrentData::Seeding:
-                    return QPixmap(statusIconPath(SeedingIcon));
+                    //return QPixmap(statusIconPath(SeedingIcon));
+		    return QIcon::fromTheme(QString("arrow-up"));
                 case TorrentData::Downloading:
-                    return QPixmap(statusIconPath(DownloadingIcon));
+                    //return QPixmap(statusIconPath(DownloadingIcon));
+		    return QIcon::fromTheme(QString("arrow-down"));
                 case TorrentData::StalledDownloading:
-                    return QPixmap(statusIconPath(StalledDownloadingIcon));
+                    //return QPixmap(statusIconPath(StalledDownloadingIcon));
+		    return QIcon::fromTheme(QString("arrow-down"));
                 case TorrentData::StalledSeeding:
-                    return QPixmap(statusIconPath(StalledSeedingIcon));
+                    //return QPixmap(statusIconPath(StalledSeedingIcon));
+		    return QIcon::fromTheme(QString("arrow-up"));
                 case TorrentData::QueuedForDownloading:
                 case TorrentData::QueuedForSeeding:
                     return QPixmap(statusIconPath(QueuedIcon));
