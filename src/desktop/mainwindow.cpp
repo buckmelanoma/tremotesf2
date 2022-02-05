@@ -446,7 +446,7 @@ namespace tremotesf
         const auto removeTorrentWithFilesShortcut = new QShortcut(QKeySequence(Qt::SHIFT + Qt::Key_Delete), this);
         QObject::connect(removeTorrentWithFilesShortcut, &QShortcut::activated, this, [=] { removeSelectedTorrents(true); });
 
-        QAction* setLocationAction = mTorrentMenu->addAction(QIcon::fromTheme(QLatin1String("location")), qApp->translate("tremotesf", "Set &Location"));
+        QAction* setLocationAction = mTorrentMenu->addAction(QIcon::fromTheme(QLatin1String("mark-location")), qApp->translate("tremotesf", "Set &Location"));
         QObject::connect(setLocationAction, &QAction::triggered, this, [=] {
             if (mTorrentsView->selectionModel()->hasSelection()) {
                 QModelIndexList indexes(mTorrentsProxyModel->sourceIndexes(mTorrentsView->selectionModel()->selectedRows()));
